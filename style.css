@@ -8,7 +8,22 @@
 .mus{
     background-color: rgba(249, 167, 49, 1);
 }
+.mus2{
+    color: rgba(249, 167, 49, 1);
+}
 
+ 
+
+ .mm {
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Add this line */
+  }
+  
+  .invisible {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease-in-out; /* Add this line */
+  }
  
 
  
