@@ -15,6 +15,8 @@ xIcon.addEventListener("click", () => {
 // movies
 document.addEventListener("DOMContentLoaded", function () {
     const trendingMovies = document.querySelector(".trending-movies");
+    const movieDetailsContainer = document.querySelector(".movie-title");
+    const backgroundContainer = document.querySelector(".back-img");
 
     const tMovies = [
         {
@@ -22,13 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
             genre: "Drama",
             tvMov: "Movie, Futuristic",
             imageUrl: "img/arri.png",
-            descrip: "Drama that explores the intricacies of human relationships and life's unpredictable twists. This cinematic journey, categorized as a captivating Movie in the Drama genre, navigates the depths of personal growth and resilience with emotionally charged storytelling, resonating with profound and relatable human experiences.",        
+            descrip: "Drama that explores the intricacies of human relationships and life's unpredictable twists. This cinematic journey, categorized as a captivating Movie in the Drama genre, navigates the depths of personal growth and resilience with emotionally charged storytelling, resonating with profound and relatable human experiences.",
         },
         {
             title: "VORTEX",
             genre: "Sci-fi, Futuristic",
             tvMov: "Movie",
-            imageUrl: "img/vorex.png",  
+            imageUrl: "img/vorex.jpg",
             descrip: "Embark on a mesmerizing journey through the uncharted realms of Sci-fi and Futuristic wonders. This captivating film transcends conventional storytelling, immersing viewers in visually stunning landscapes and mind-bending concepts, promising an exhilarating cinematic exploration beyond the limits of imagination.",
         },
         {
@@ -45,13 +47,50 @@ document.addEventListener("DOMContentLoaded", function () {
             imageUrl: "img/Quirkquake.png",
             descrip: "Quirkquake is a comedic marvel, blending humor and wit to create an uproarious Stand-up experience. This laughter-inducing performance transcends traditional boundaries, delivering a seismic wave of amusement with its unique style and comedic flair.",  
         },
+    
     ];
+
+    function changeBackgroundImage(imageUrl) {
+        backgroundContainer.style.backgroundImage = `url(${imageUrl})`;
+        backgroundContainer.style.backgroundPosition = 'center center';  
+
+    }
+
+    function displayMovieDetails(movie) {
+        movieDetailsContainer.innerHTML = `
+            <h1 class="uppercase text-white text-7xl font-bold sm:text-8xl">${movie.title}</h1>
+            <div class="genre flex gap-2">
+                <p class="text-white uppercase">genre:</p>
+                <p class="text-red-700">${movie.genre}, ${movie.tvMov}</p>
+            </div>
+            <div class="about-movie text-white">
+                ${movie.descrip}
+                <a class="mus2" href="#">Read more</a>
+            </div>
+            <div class="button mt-3">
+                <button class="uppercase mus py-1 px-4 rounded-lg"><a href="#">watch now</a></button>
+            </div>
+        `;
+        changeBackgroundImage(movie.imageUrl);
+    }
+
+    function handleMovieClick(movie) {
+        return function () {
+            changeBackgroundImage(movie.imageUrl);
+            displayMovieDetails(movie);
+        };
+    }
+
+    
+    displayMovieDetails(tMovies.find(movie => movie.title === "VORTEX"));
 
     tMovies.forEach((movie) => {
         const movieElement = document.createElement("div");
         movieElement.classList.add("movie", "w-48", "relative");
         movieElement.innerHTML = `
-            <img src="${movie.imageUrl}" alt="movie">
+            <div class="img-s w-[192px] h-[317px] " >
+                <img class="w-full h-full object-cover" src="${movie.imageUrl}" alt="movie">
+            </div>
             <div class="descr bg-neutral-600 bg-opacity-70 absolute w-full bottom-0 p-2">
                 <div class="title uppercase flex justify-between text-white">
                     <p class="movie-title">${movie.title}</p>
@@ -61,8 +100,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p class="text-white uppercase">genre:</p>
                     <p class="text-red-700">${movie.genre}, ${movie.tvMov}</p>
                 </div>
-            </div>`;
+            </div>
+        `;
+
+        movieElement.addEventListener("click", handleMovieClick(movie));
 
         trendingMovies.appendChild(movieElement);
     });
 });
+
+ 
