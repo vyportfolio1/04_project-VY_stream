@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <h1 class="uppercase text-white text-7xl font-bold sm:text-8xl">${movie.title}</h1>
             <div class="genre flex gap-2">
                 <p class="text-white uppercase">genre:</p>
-                <p class="text-red-700">${movie.genre}, ${movie.tvMov}</p>
+                <p class="text-red-400">${movie.genre}, ${movie.tvMov}</p>
             </div>
             <div class="about-movie text-white">
                 ${movie.descrip}
@@ -91,14 +91,14 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="img-s w-[192px] h-[317px] " >
                 <img class="w-full h-full object-cover" src="${movie.imageUrl}" alt="movie">
             </div>
-            <div class="descr bg-neutral-600 bg-opacity-70 absolute w-full bottom-0 p-2">
+            <div class="descr bg-neutral-600 bg-opacity-80 absolute w-full bottom-0 p-2">
                 <div class="title uppercase flex justify-between text-white">
-                    <p class="movie-title">${movie.title}</p>
+                    <p class="movie-title font-bold">${movie.title}</p>
                     <i class="fa-regular fa-heart"></i>
                 </div>
                 <div class="genre flex gap-2">
                     <p class="text-white uppercase">genre:</p>
-                    <p class="text-red-700">${movie.genre}, ${movie.tvMov}</p>
+                    <p class="text-red-400">${movie.genre}, ${movie.tvMov}</p>
                 </div>
             </div>
         `;

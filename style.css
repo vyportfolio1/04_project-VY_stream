@@ -5,6 +5,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 .mus{
     background-color: rgba(249, 167, 49, 1);
 }
