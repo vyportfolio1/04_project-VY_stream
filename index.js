@@ -109,4 +109,207 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// <!-- New Releases -->
+
+const newMovies = [
+    {
+      title: 'loon',
+      genre: 'drama, tv',
+      imgSrc: 'img/loon.png'
+    },
+    {
+      title: 'invisible',
+      genre: 'sci-fi, movie',
+      imgSrc: 'img/invisible.png'
+    },
+    {
+      title: 'wonder',
+      genre: 'adventure, movie',
+      imgSrc: 'img/wonder.png'
+    },
+    {
+      title: 'Arri',
+      genre: 'sci-fi, movie',
+      imgSrc: 'img/arri.png'
+    },
+    {
+      title: 'long days',
+      genre: 'drama, tv',
+      imgSrc: 'img/long days.png',
+      hiddenClass: 'lg:flex'
+    },
+    {
+      title: 'forte',
+      genre: 'sci-fi, movie',
+      imgSrc: 'img/forte.png',
+      hiddenClass: 'xl:flex'
+    },
+    {
+      title: 'jonne',
+      genre: 'adventure, movie',
+      imgSrc: 'img/jonne.png',
+      hiddenClass: '2xl:flex'
+    }
+  ];
+  
+  
+  const movieContainer = document.querySelector('.nRel');
+  
+  newMovies.forEach(movie => {
+    const movieElement = document.createElement('div');
+    movieElement.className = `movie w-[192px] h-[317px] relative ${movie.hiddenClass || ''}`;
+    
+    movieElement.innerHTML = `
+      <img class="w-full h-full object-cover" src="${movie.imgSrc}" alt="movie poster">
+      <div class="descr bg-neutral-600 bg-opacity-90 absolute w-full bottom-0 p-2">
+          <div class="title uppercase flex justify-between text-white">
+              <p class="movie-title">${movie.title}</p>
+              <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="genre flex gap-2">
+              <p class="text-white uppercase">genre:</p>
+              <p class="text-red-400">${movie.genre}</p>
+          </div>
+      </div>
+    `;
+    
+    movieContainer.appendChild(movieElement);
+  });
+  
+
+//   <!-- my list -->
+
+const listMovies = [
+    {
+      title: 'rain',
+      genre: 'drama, movie',
+      imgSrc: 'img/rain.png'
+    },
+    {
+      title: 'moon 2',
+      genre: 'Futuristic, movie',
+      imgSrc: 'img/moon 2.png'
+    },
+    {
+      title: 'Arri',
+      genre: 'sci-fi, tv',
+      imgSrc: 'img/arri.png'
+    },
+    {
+      title: 'amama',
+      genre: 'drama, movie',
+      imgSrc: 'img/amama.png'
+    },
+    {
+      title: 'lili',
+      genre: 'drama, movie',
+      imgSrc: 'img/lili.png',
+      hiddenClass: 'lg:flex'
+    },
+    {
+      title: 'warm space',
+      genre: 'Futuristic, movie',
+      imgSrc: 'img/warm space.png',
+      hiddenClass: 'xl:flex'
+    },
+    {
+      title: 'dino world',
+      genre: 'comedy, movie',
+      imgSrc: 'img/dino world.png',
+      hiddenClass: '2xl:flex'
+    }
+  ];
+  
+ 
+  const movieContainer2 = document.querySelector('.mylist');
+  
+  listMovies.forEach(movie => {
+    const movieElement = document.createElement('div');
+    movieElement.className = `movie w-[192px] h-[317px] relative ${movie.hiddenClass || ''}`;
+    
+    movieElement.innerHTML = `
+      <img class="w-full h-full object-cover" src="${movie.imgSrc}" alt="movie poster">
+      <div class="descr bg-neutral-600 bg-opacity-90 absolute w-full bottom-0 p-2">
+          <div class="title uppercase flex justify-between text-white">
+              <p class="movie-title">${movie.title}</p>
+              <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="genre flex gap-2">
+              <p class="text-white uppercase">genre:</p>
+              <p class="text-red-400">${movie.genre}</p>
+          </div>
+      </div>
+    `;
+    
+    movieContainer2.appendChild(movieElement);
+  });
+
+//   <!-- upcomming -->
+
+  const upcomingMovies = [
+    {
+      title: 'snow',
+      genre: 'drama, movie',
+      imgSrc: 'img/snow.png'
+    },
+    {
+      title: 'times',
+      genre: 'drama, movie',
+      imgSrc: 'img/times.png'
+    },
+    {
+      title: 'jupiter',
+      genre: 'adventure, movie',
+      imgSrc: 'img/jupiter.png'
+    },
+    {
+      title: 'jim',
+      genre: 'comedy, movie',
+      imgSrc: 'img/jim.png'
+    },
+    {
+      title: 'nova',
+      genre: 'Futuristic, movie',
+      imgSrc: 'img/nova.png',
+      hiddenClass: 'lg:flex'
+    },
+    {
+      title: 'dandy',
+      genre: 'comedy, movie',
+      imgSrc: 'img/dandy.png',
+      hiddenClass: 'xl:flex'
+    },
+    {
+      title: 'lost',
+      genre: 'adventure, movie',
+      imgSrc: 'img/lost.png',
+      hiddenClass: '2xl:flex'
+    }
+  ];
+  
+
+  const movieContainer3 = document.querySelector('.upcomming');
+  
+  upcomingMovies.forEach(movie => {
+    const movieElement = document.createElement('div');
+    movieElement.className = `movie w-[192px] h-[317px] relative ${movie.hiddenClass || ''}`;
+    
+    movieElement.innerHTML = `
+      <img class="w-full h-full object-cover" src="${movie.imgSrc}" alt="movie poster">
+      <div class="descr bg-neutral-600 bg-opacity-90 absolute w-full bottom-0 p-2">
+          <div class="title uppercase flex justify-between text-white">
+              <p class="movie-title">${movie.title}</p>
+              <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="genre flex gap-2">
+              <p class="text-white uppercase">genre:</p>
+              <p class="text-red-400">${movie.genre}</p>
+          </div>
+      </div>
+    `;
+    
+    movieContainer3.appendChild(movieElement);
+  });
+  
+  
  
