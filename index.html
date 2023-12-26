@@ -47,12 +47,26 @@
                 <a href="#up">upcoming</a>
             </div>
             <div class="icons hidden sm:flex gap-4 items-center">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="search flex gap-1 items-center">
+                    <input type="search" name="search" id="search" class="w-36 rounded-3xl py-1 px-3 text-black" placeholder="Search">
+                    <i id="searchIcon" class="fa-solid fa-magnifying-glass cursor-pointer"></i>
+                </div>
+
+                
                 <i class="fa-regular fa-bell"></i>
             </div>
+
+            <!-- display searh movies -->
+            <div class="moviesSearch w-10/12 h-5/6 bg-black absolute z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-10 hid">
+                <i id="close" class="fa-solid fa-x mb-14 cursor-pointer text-white"></i>
+                <div class="showmovies">
+
+                </div>
+            </div>
+
             <div class="user hidden sm:flex gap-4 items-center">
                 <img class="img1 w-16 h-16 rounded-full" src="img/user.png" alt="user">
-                <i class="fa-solid fa-chevron-down"></i>
+                <i class="fa-solid fa-chevron-down text-white"></i>
             </div>
             <div class="hamburger">
                 <i class="fa-solid fa-bars cursor-pointer"></i>
@@ -64,7 +78,6 @@
                         <a href="#">New Releases</a>
                         <a href="#">My List</a>
                         <a href="#">upcoming</a>
-                        <div class="icons flex gap-4 items-center">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div class="user flex gap-4 items-center">

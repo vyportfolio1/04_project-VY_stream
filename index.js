@@ -12,7 +12,7 @@ xIcon.addEventListener("click", () => {
  
 });
 
-// movies
+// trending movies
 document.addEventListener("DOMContentLoaded", function () {
     const trendingMovies = document.querySelector(".trending-movies");
     const movieDetailsContainer = document.querySelector(".movie-title");
@@ -284,7 +284,45 @@ const listMovies = [
       genre: 'adventure, movie',
       imgSrc: 'img/lost.png',
       hiddenClass: '2xl:flex'
-    }
+    },
+    {
+        title: 'loon',
+        genre: 'drama, tv',
+        imgSrc: 'img/loon.png'
+      },
+      {
+        title: 'invisible',
+        genre: 'sci-fi, movie',
+        imgSrc: 'img/invisible.png'
+      },
+      {
+        title: 'wonder',
+        genre: 'adventure, movie',
+        imgSrc: 'img/wonder.png'
+      },
+      {
+        title: 'Arri',
+        genre: 'sci-fi, movie',
+        imgSrc: 'img/arri.png'
+      },
+      {
+        title: 'long days',
+        genre: 'drama, tv',
+        imgSrc: 'img/long days.png',
+        hiddenClass: 'lg:flex'
+      },
+      {
+        title: 'forte',
+        genre: 'sci-fi, movie',
+        imgSrc: 'img/forte.png',
+        hiddenClass: 'xl:flex'
+      },
+      {
+        title: 'jonne',
+        genre: 'adventure, movie',
+        imgSrc: 'img/jonne.png',
+        hiddenClass: '2xl:flex'
+      }
   ];
   
 
@@ -312,4 +350,89 @@ const listMovies = [
   });
   
   
+//  search bar
+
+const tMovies = [
+  {
+      title: "ARRI",
+      genre: "Drama",
+      tvMov: "Movie, Futuristic",
+      imageUrl: "img/arri.png",
+      descrip: "Drama that explores the intricacies of human relationships and life's unpredictable twists. This cinematic journey, categorized as a captivating Movie in the Drama genre, navigates the depths of personal growth and resilience with emotionally charged storytelling, resonating with profound and relatable human experiences.",
+  },
+  {
+      title: "VORTEX",
+      genre: "Sci-fi, Futuristic",
+      tvMov: "Movie",
+      imageUrl: "img/vorex.jpg",
+      descrip: "Embark on a mesmerizing journey through the uncharted realms of Sci-fi and Futuristic wonders. This captivating film transcends conventional storytelling, immersing viewers in visually stunning landscapes and mind-bending concepts, promising an exhilarating cinematic exploration beyond the limits of imagination.",
+  },
+  {
+      title: "ERUPTION",
+      genre: "Adventure, Drama",
+      tvMov: "Movie",
+      imageUrl: "img/eruption.png",
+      descrip: "Movie unfolds as an exhilarating Adventure-Drama, immersing viewers in a captivating cinematic experience. This movie transcends traditional storytelling, navigating through thrilling landscapes and emotional depths. As a compelling Movie, it promises an enthralling exploration of human resilience and the unpredictability of life.",  
+  },
+  {
+      title: "Quirkquake",
+      genre: "Comedy",
+      tvMov: "Stand-up",
+      imageUrl: "img/Quirkquake.png",
+      descrip: "Quirkquake is a comedic marvel, blending humor and wit to create an uproarious Stand-up experience. This laughter-inducing performance transcends traditional boundaries, delivering a seismic wave of amusement with its unique style and comedic flair.",  
+  },
+
+];
+
+
  
+
+    const searchInput = document.getElementById("search");
+    const closeBtn = document.getElementById("close");
+    const searchBtn = document.getElementById("searchIcon");
+    const moviesSearchDiv = document.querySelector(".moviesSearch");
+    const showMoviesDiv = document.querySelector(".showmovies");
+
+    searchBtn.addEventListener("click", () => {
+  
+        const searchTerm = searchInput.value.toLowerCase();
+
+   
+        const matchingMovies = tMovies.filter(movie =>
+            movie.title.toLowerCase().includes(searchTerm)
+        );
+
+   
+        displaySearchResults(matchingMovies);
+        
+   
+        moviesSearchDiv.classList.remove("hid");
+    });
+
+    closeBtn.addEventListener("click", () => {
+  
+        moviesSearchDiv.classList.add("hid");
+    });
+
+    function displaySearchResults(movies) {
+     
+        showMoviesDiv.innerHTML = "";
+
+ 
+        movies.forEach(movie => {
+            const movieElement = document.createElement("div");
+            movieElement.classList.add("search-result");
+
+         
+            movieElement.innerHTML = `
+                <p class="search-result-title">${movie.title}</p>
+                <p class="search-result-genre">${movie.genre}</p>
+                <img class="search-result-image" src="${movie.imageUrl}" alt="movie poster">
+            `;
+
+        
+            showMoviesDiv.appendChild(movieElement);
+        });
+    }
+
+

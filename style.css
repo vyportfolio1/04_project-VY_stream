@@ -28,6 +28,10 @@ html{
     pointer-events: none;
     transition: opacity 1s ease-in-out; /* Add this line */
   }
+
+  .hid{
+    display: none;
+  }
  
 
  
