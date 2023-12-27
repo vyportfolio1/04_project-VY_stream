@@ -105,10 +105,15 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
 
+        
+
         movieElement.addEventListener("click", handleMovieClick(movie));
 
         trendingMovies.appendChild(movieElement);
     });
+
+    // like
+    
 });
 
 // <!-- New Releases -->
@@ -451,7 +456,7 @@ const tMovies = [
 
     const searchInput = document.getElementById("search");
     const closeBtn = document.getElementById("close");
-    const searchBtn = document.getElementById("searchIcon");
+    const searchBtn = document.querySelector(".fa-magnifying-glass");
     const moviesSearchDiv = document.querySelector(".moviesSearch");
     const showMoviesDiv = document.querySelector(".showmovies");
 

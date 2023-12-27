@@ -52,11 +52,10 @@
             <div class="icons hidden sm:flex gap-4 items-center">
                 <div class="search flex gap-1 items-center">
                     <input id="search" type="search" name="search" class="w-36 rounded-3xl py-1 px-3 text-black" placeholder="Search">
-                    <i id="searchIcon" class="fa-solid fa-magnifying-glass cursor-pointer"></i>
+                    <i id="searchIcon" class="search-icon fa-solid fa-magnifying-glass cursor-pointer"></i>
                 </div>
 
                 
-                <i class="fa-regular fa-bell"></i>
             </div>
 
             <!-- display searh movies -->
@@ -67,21 +66,23 @@
                 </div>
             </div>
 
-            <div class="user hidden sm:flex gap-4 items-center">
+            <div id="user" class="user hidden sm:flex gap-4 items-center">
                 <img class="img1 w-16 h-16 rounded-full" src="img/user.png" alt="user">
-                <i class="fa-solid fa-chevron-down text-white"></i>
+                <div class="likes">
+                    
+                </div>
             </div>
             <div class="hamburger">
-                <i class="fa-solid fa-bars cursor-pointer"></i>
+                <i id="burg" class="fa-solid fa-bars cursor-pointer"></i>
                 <div class="slide-meniu absolute h-full mus right-0 top-0 z-50 w-3/4 invisible mm xl:w-1/3">
-                    <div class="men flex flex-col items-center text-3xl pt-11 gap-6 ">
+                    <div class="men flex flex-col items-center text-3xl pt-11 gap-6 uppercase">
                         <i class="fa-regular fa-circle-xmark cursor-pointer"></i>
                         <a href="#">About us</a>  
                         <a href="#tre">Trending</a>
                         <a href="#new">New Releases</a>
                         <a href="#mylist">My List</a>
                         <a href="#up">Upcoming</a>
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                    
                             <div class="user flex gap-4 items-center">
                                 <img class="img1 w-16 h-16 rounded-full" src="img/user.png" alt="user">
                             </div>
@@ -138,7 +139,7 @@ Embark on a mesmerizing journey through the uncharted realms of Sci-fi and Futur
 
      <!-- my list -->
 
-<div class="newR mt-20 mb-10 flex flex-wrap justify-between items-center mx-3 sm:mx-10 2xl:justify-around 2xl:mt-40" id="mylist">
+<div class="newR1 mt-20 mb-10 flex flex-wrap justify-between items-center mx-3 sm:mx-10 2xl:justify-around 2xl:mt-40" id="mylist">
     <h1 class="uppercase text-white text-4xl font-bold sm:text-5xl">MY LIST</h1>
     <a class="text-white text-xl font-bold underline sm:text-2xl" href="">View all</a>
 </div>
@@ -152,7 +153,7 @@ Embark on a mesmerizing journey through the uncharted realms of Sci-fi and Futur
 
       <!-- upcomming -->
 
-<div class="newR mt-20 mb-10 flex flex-wrap justify-between items-center mx-3 sm:mx-10 2xl:justify-around 2xl:mt-40" id="up">
+<div class="newR2 mt-20 mb-10 flex flex-wrap justify-between items-center mx-3 sm:mx-10 2xl:justify-around 2xl:mt-40" id="up">
     <h1 class="uppercase text-white text-4xl font-bold sm:text-5xl">UPCOMINGs</h1>
     <a class="text-white text-xl font-bold underline sm:text-2xl" href="">View all</a>
 </div>
