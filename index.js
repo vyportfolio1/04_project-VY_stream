@@ -1,14 +1,15 @@
 const burgerIcon = document.querySelector(".fa-bars");
-const xIcon = document.querySelector("#close");
+const xIcon = document.querySelector(".fa-circle-xmark");
 const slideMeniu = document.querySelector(".slide-meniu");
 
 burgerIcon.addEventListener("click", () => {
     slideMeniu.classList.remove("invisible");
+    slideMeniu.classList.add("mm");  
 });
 
 xIcon.addEventListener("click", () => {
+    slideMeniu.classList.remove("mm");  
     slideMeniu.classList.add("invisible");
-    slideMeniu.classList.remove("mm")
 });
  
  
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             descrip: "Drama that explores the intricacies of human relationships and life's unpredictable twists. This cinematic journey, categorized as a captivating Movie in the Drama genre, navigates the depths of personal growth and resilience with emotionally charged storytelling, resonating with profound and relatable human experiences.",
         },
         {
-            title: "VORTEX",
+            title: "VOREX",
             genre: "Sci-fi, Futuristic",
             tvMov: "Movie",
             imageUrl: "img/vorex.jpg",
@@ -83,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     
-    displayMovieDetails(tMovies.find(movie => movie.title === "VORTEX"));
+    displayMovieDetails(tMovies.find(movie => movie.title === "VOREX"));
 
     tMovies.forEach((movie) => {
         const movieElement = document.createElement("div");
@@ -286,44 +287,9 @@ const listMovies = [
       imgSrc: 'img/lost.png',
       hiddenClass: '2xl:flex'
     },
-    {
-        title: 'loon',
-        genre: 'drama, tv',
-        imgSrc: 'img/loon.png'
-      },
-      {
-        title: 'invisible',
-        genre: 'sci-fi, movie',
-        imgSrc: 'img/invisible.png'
-      },
-      {
-        title: 'wonder',
-        genre: 'adventure, movie',
-        imgSrc: 'img/wonder.png'
-      },
-      {
-        title: 'Arri',
-        genre: 'sci-fi, movie',
-        imgSrc: 'img/arri.png'
-      },
-      {
-        title: 'long days',
-        genre: 'drama, tv',
-        imgSrc: 'img/long days.png',
-        hiddenClass: 'lg:flex'
-      },
-      {
-        title: 'forte',
-        genre: 'sci-fi, movie',
-        imgSrc: 'img/forte.png',
-        hiddenClass: 'xl:flex'
-      },
-      {
-        title: 'jonne',
-        genre: 'adventure, movie',
-        imgSrc: 'img/jonne.png',
-        hiddenClass: '2xl:flex'
-      }
+
+    
+     
   ];
   
 
@@ -356,13 +322,13 @@ const listMovies = [
 const tMovies = [
   {
       title: "ARRI",
-      genre: "Drama",
-      tvMov: "Movie, Futuristic",
+      genre: "Drama, Futuristic",
+      tvMov: "Movie",
       imageUrl: "img/arri.png",
       descrip: "Drama that explores the intricacies of human relationships and life's unpredictable twists. This cinematic journey, categorized as a captivating Movie in the Drama genre, navigates the depths of personal growth and resilience with emotionally charged storytelling, resonating with profound and relatable human experiences.",
   },
   {
-      title: "VORTEX",
+      title: "VOREX",
       genre: "Sci-fi, Futuristic",
       tvMov: "Movie",
       imageUrl: "img/vorex.jpg",
@@ -383,7 +349,102 @@ const tMovies = [
       descrip: "Quirkquake is a comedic marvel, blending humor and wit to create an uproarious Stand-up experience. This laughter-inducing performance transcends traditional boundaries, delivering a seismic wave of amusement with its unique style and comedic flair.",  
   },
 
+  {
+    title: 'Loon',
+    genre: 'Drama',
+    imageUrl: 'img/loon.png',
+    tvMov: 'Tv'
+  },
+  {
+    title: 'Invisible',
+    genre: 'Sci-fi',
+    imageUrl: 'img/invisible.png',
+    tvMov: 'Movie'
+  },
+  {
+    title: 'Wonder',
+    genre: 'adventure',
+    imageUrl: 'img/wonder.png',
+    tvMov:'Movie'
+  },
+  {
+    title: 'Arri',
+    genre: 'Sci-fi',
+    imageUrl: 'img/arri.png',
+    tvMov: 'Movie'
+  },
+  {
+    title: 'Long days',
+    genre: 'Drama',
+    imageUrl: 'img/long days.png',
+    hiddenClass: 'lg:flex',
+    tvMov:'Tv'
+  },
+  {
+    title: 'Forte',
+    genre: 'Sci-fi',
+    imageUrl: 'img/forte.png',
+    hiddenClass: 'xl:flex',
+    tvMov:'Movie'
+  },
+  {
+    title: 'Jonne',
+    genre: 'Adventure',
+    imageUrl: 'img/jonne.png',
+    hiddenClass: '2xl:flex',
+    tvMov: 'Movie'
+  },
+
+  {
+    title: 'Rain',
+    genre: 'Drama',
+    imageUrl: 'img/rain.png',
+    tvMov: 'Movie'
+  },
+  {
+    title: 'Moon 2',
+    genre: 'Futuristic',
+    imageUrl: 'img/moon 2.png',
+    tvMov: 'Movie'
+  },
+  {
+    title: 'Arri',
+    genre: 'sci-fi',
+    imageUrl: 'img/arri.png',
+    tvMov: 'Tv'
+  },
+  {
+    title: 'Amama',
+    genre: 'Drama',
+    imageUrl: 'img/amama.png',
+    tvMov: 'Movie'
+  },
+  {
+    title: 'Lili',
+    genre: 'Drama',
+    imageUrl: 'img/lili.png',
+    hiddenClass: 'lg:flex',
+    tvMov: 'Movie'
+  },
+  {
+    title: 'Warm space',
+    genre: 'Futuristic',
+    imageUrl: 'img/warm space.png',
+    hiddenClass: 'xl:flex',
+    tvMov: 'Movie'
+  },
+  {
+    title: 'Dino world',
+    genre: 'Comedy',
+    imageUrl: 'img/dino world.png',
+    hiddenClass: '2xl:flex',
+    tvMov: 'Movie'
+  }
+
 ];
+
+ 
+  
 
 
  
@@ -426,9 +487,11 @@ const tMovies = [
 
          
             movieElement.innerHTML = `
-                <p class="search-result-title">${movie.title}</p>
-                <p class="search-result-genre">${movie.genre}</p>
-                <img class="search-result-image" src="${movie.imageUrl}" alt="movie poster">
+                <p class="search-result-title">MOVIE TITLE: <span class="text-red-400">${movie.title}</span></p>
+                <p class="search-result-genre">GENRE: <span class="text-red-400">${movie.genre}</span></p>
+                <p class="search-result-tvMov">MEDIA: <span class="text-red-400">${movie.tvMov}</span></p>
+                <img class="search-result-image max-w-xl" src="${movie.imageUrl}" alt="movie poster">
+                <p class="search-result-descrip mb-20">DESCRIPTION: <span class="text-red-400">${movie.descrip}</span></p>
             `;
 
         

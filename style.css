@@ -32,6 +32,15 @@ html{
   .hid{
     display: none;
   }
+
+  .search-result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: black;
+    padding: 80px;
+  }
  
 
  
