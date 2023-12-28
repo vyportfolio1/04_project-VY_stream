@@ -232,22 +232,22 @@ anime({
     const observerFooter = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // Start Anime.js animation when the footer is in the viewport
+           
             animateFooter();
-            // Stop observing to prevent repeat
+         
             observer.unobserve(entry.target);
           }
         });
       }, { threshold: 0.5 });
     
-      // Target the element to observe
+     
       const targetFooterElement = document.querySelector('.foot');
     
-      // Start observing the target element
+      
       observerFooter.observe(targetFooterElement);
     
       function animateFooter() {
-        // Anime.js animation for the logo
+       
         anime({
           targets: '.logo path',
           opacity: [0, 1],
@@ -256,7 +256,7 @@ anime({
           easing: 'easeInOutQuad'
         });
     
-        // Anime.js animation for the "Follow us" section
+     
         anime({
           targets: '.fall a i',
           opacity: [0, 1],
@@ -266,7 +266,7 @@ anime({
           easing: 'easeInOutQuad'
         });
     
-        // Anime.js animation for the footer columns
+     
         anime({
           targets: '.fot div',
           opacity: [0, 1],
